@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Projects by Pavel Pervushkin">
+    <title>Pavel Pervushkin Projects Page</title>
+    <link rel="stylesheet" href="main.css" />
+	<link rel="stylesheet" href="bootstrap.min.css" />
+</head>
+
+<body>
+	<div id="menu">
+		<nav class="navbar navbar-expand-lg">
+			<div class="navbar-nav">
+			  <u><a class="nav-link active mx-3" href="index.html" aria-current="page">Home</a></u>
+			  <u><a class="nav-link active mx-3" href="projects.html" aria-current="page">Projects</a></u>
+			</div>
+		</nav>
+	</div>
+	
+    <div class="py-5">
+      <div class="container">
+	  
+        <div class="row hidden-md-up">
+			<div class="col-md-4">
+				<div class="card">
+						<div class="card-block">
+						<h4 class="card-title">AS5600 library</h4>
+						<h6 class="card-subtitle text-muted">ESP32 Arduino library for AS5600 and AS5600L Magnetic Encoder</h6><br>
+						<p class="card-text p-y-1">
+						Work with signals from I2C bus, work with signals from analog(PWM) pin, configure all AS5600 registers, 
+						get the Raw Angle, get the Deg Angle, get the Rotation Speed, check the magnet, get magnetic intensity, filter input signals.<br>
+						Two AS5600 update modes: timer interrupts for ESP32 and loop updates for arduino, esp8266 or ESP32.
+						</p>
+						<a href="https://github.com/pervu/AS5600-encoder" class="card-link">AS5600 GitHub Repo</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+                <div class="card">
+					<div class="card-block">
+						<h4 class="card-title">yaWebSerial library</h4>
+						<h6 class="card-subtitle text-muted">Yet another web serial library for communication with ESP32 Serial through WiFI.</h6><br>
+						<p class="card-text p-y-1">
+						My implementation of the web serial terminal.
+						The main difference from similar libraries:<br>
+						- does not use websockets;<br>
+						- doesn't use gzip for html page (you can simple edit web interface to your taste);<br>
+						- stable operation;<br>
+						</p>
+						<center>
+						<p>
+							<img class="myImg" src="pic\yaWebSerial_Interface.png" alt="yaWebSerial web interface" style="width:100%;max-width:200px">
+							<div class="modal">
+								<span class="close">&times;</span>
+								<img class="modal-content" id="img01">
+								<div class="caption"></div>
+							</div>
+						</p>
+						</center>
+						<p>
+						<a href="https://github.com/pervu/yaWebSerial" class="card-link">yaWebSerial GitHub Repo</a>
+						</p>
+					</div>
+                </div>
+			</div>
+            <div class="col-md-4">
+				<div class="card">
+					<div class="card-block">
+						<h4 class="card-title">Art-Net Audio Player</h4>
+						<h6 class="card-subtitle text-muted">Simple, free, crossplatform Art-Net timecode audio player</h6><br>
+						<p class="card-text p-y-1">
+						It is simple, crossplatform audio player, that can send Art-Net Timecode synchronizing with playing time of the audio file.
+						I don't have enough time to maintain this project at the moment, I hope to come back to it later.
+						</p>
+						<center>
+						<p>
+							<img class="myImg" src="pic\artnet_timecode_Interface.png" alt="Art-Net Timecode Player interface" style="width:100%;max-width:200px">
+							<div class="modal">
+								<span class="close">&times;</span>
+								<img class="modal-content" id="img01">
+								<div class="caption"></div>
+							</div>
+						</p>
+						</center>
+						<p>
+						<a href="https://github.com/ArtNetAudioPlayer/ANetPlayerSource" class="card-link">Art-Net Audio Player GitHub Repo</a>
+						<a href="https://artnetaudioplayer.github.io/" class="card-link">WebSite</a>
+						</p>
+					</div>
+				</div>
+            </div>
+        </div><br>
+		
+        <div class="row">
+		
+        </div>
+		
+      </div>
+    </div>
+</body>
+  
+<footer>
+	<div id="copyright">
+		&copy; 2024 Pavel Pervushkin
+	</div>
+</footer>
+
+<script>
+// Get all images with class "myImg" and loop through them
+var images = document.getElementsByClassName("myImg");
+for (var i = 0; i < images.length; i++) {
+  var img = images[i];
+  // Attach click event listener to each image
+  img.onclick = function() {
+    var modal = this.nextElementSibling; // Get the modal corresponding to the clicked image
+    var modalImg = modal.getElementsByClassName("modal-content")[0];
+    var captionText = modal.getElementsByClassName("caption")[0];
+    modal.style.display = "block"; // Display the modal
+    modalImg.src = this.src; // Set modal image source to clicked image source
+    captionText.innerHTML = this.alt; // Set caption text to clicked image alt text
+  }
+}
+
+// Get all close buttons and loop through them
+var closeButtons = document.getElementsByClassName("close");
+for (var i = 0; i < closeButtons.length; i++) {
+  var closeButton = closeButtons[i];
+  // Attach click event listener to each close button
+  closeButton.onclick = function() {
+    var modal = this.parentElement; // Get the parent modal of the clicked close button
+    modal.style.display = "none"; // Hide the modal
+  }
+}
+</script>
+
+</html>
