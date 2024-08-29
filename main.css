@@ -26,6 +26,47 @@ footer {
   padding: 1em;
 }
 
+.goto {
+	display: flex;
+}
+
+#goto a:link {
+  color: black;
+  background-color: transparent;
+  text-decoration: underline;
+  font-weight: 600;
+  padding: 22px;
+  letter-spacing: 2px;
+  font-size: 18px;
+  text-transform: uppercase;
+  display: inline-block; 
+}
+#goto a:visited {
+  color: #000000;
+  background-color: transparent;
+  text-decoration: underline;
+  font-weight: 600;
+  padding: 22px;
+  letter-spacing: 2px;
+  font-size: 18px;
+  text-transform: uppercase;
+  display: inline-block; 
+}
+#goto a:hover {
+  color: #939393;
+  background-color: transparent;
+  text-decoration: underline;
+  font-weight: 600;
+  padding: 22px;
+  letter-spacing: 2px;
+  font-size: 18px;
+  text-transform: uppercase;
+  display: inline-block; 
+  transform: scale(1.2); /* Увеличение размера текста при наведении */
+  transition: transform 0.3s ease; /* Плавный переход при изменении размера */
+}
+
+
 #menu{
 	background-color: #f5f5f5;
 	display: flex;
