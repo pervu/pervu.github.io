@@ -62,8 +62,8 @@ footer {
   font-size: 18px;
   text-transform: uppercase;
   display: inline-block; 
-  transform: scale(1.2); /* Увеличение размера текста при наведении */
-  transition: transform 0.3s ease; /* Плавный переход при изменении размера */
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
 }
 
 
